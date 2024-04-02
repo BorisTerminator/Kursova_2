@@ -1,0 +1,572 @@
+<!DOCTYPE html><html lang="ru"><head>
+        <script async="" type="text/javascript" src="https://stat.sputnik.ru/cnt.js"></script><script async="" src="https://mc.yandex.ru/metrika/tag.js"></script><script type="text/javascript">
+        //если окно было открыто для авторизации, нужно отправить сигнал родителю, окно будет закрыто
+        if (window.opener) {
+            try {
+                var origin = window.opener.origin ? window.opener.origin : window.opener.location.origin;
+            } catch (e) {
+                var origin = 'https://help.mos-gorsud.ru';
+            }
+
+            if ('https://help.mos-gorsud.ru' === origin || 'https://mos-gorsud.ru' === origin) {
+                window.opener.postMessage(JSON.stringify({auth:false}), origin);
+            }
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+                    Быстрый поиск по судебным делам
+            </title>
+
+        
+    <!--[if lt IE 9]>
+    <script src="/resources/js/html5shiv/html5shiv.min.js?v=1b1"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+        <script src="/resources/js/html5shiv/es5-shim.min.js?v=1b1"></script>
+        <script src="/resources/js/html5shiv/respond.min.js?v=1b1"></script>
+        <script src="/resources/js/html5shiv/html5shiv-printshiv.min.js?v=1b1"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/static/css/jquery.css?v=1b1">
+    <link rel="stylesheet" href="/static/css/styles.css?v=1b1">
+    <link rel="stylesheet" href="/static/css/fastsearch.css?v=1b1">
+    <link rel="stylesheet" href="/static/css/header.css?v=1b1">
+    <link rel="stylesheet" href="/resources/libs/alertifyjs/css/alertify.css?v=1b1">
+    <link rel="stylesheet" href="/resources/libs/alertifyjs/css/themes/croc-lk.css?v=1b1">
+    <meta name="viewport" content="width=device-width">
+        
+    <script type="text/javascript">
+    var require = {
+        "baseUrl": "/resources/js",
+        "locale": "en",
+        "paths": {
+            "@popperjs/core": "/resources/js/tippy/popper",
+            "tippy": "/resources/js/tippy/tippy",
+            "async": "/resources/js/async/async",
+            "new-design-logic": "/resources/js/new-design-logic/croc",
+            "new-design-logic-custom": "/resources/js/new-design-logic-custom/croc-custom",
+            "mobile-scripts": "/resources/js/mobile-scripts/croc-mobile",
+            "googlemaps": "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=ru&key=AIzaSyAj7HJWqxxp7FRStX3IdhmWOmp6s6M3x3U",
+            "gmaps": "/resources/js/gmaps/gmaps",
+            "croc-map-logic": "/resources/js/croc-map-logic/croc-map",
+            "jquery-mousewheel": "/resources/js/jquery-mousewheel/jquery.mousewheel-3.0.6.pack",
+            "slick": "/resources/js/slick/slick.min",
+            "icheck": "/resources/js/icheck/icheck.min",
+            "jquery-truncate": "/resources/js/jquery-truncate/jquery-truncate",
+            "jquery-selectbox": "/resources/js/jquery-selectbox/jquery.selectbox-0.2.min",
+            "jquery-jscrollpane": "/resources/js/jquery-jscrollpane/jquery.jscrollpane.min",
+            "jquery-scrolltofixed": "/resources/js/jquery-scrolltofixed/jquery-scrolltofixed-min",
+            "jquery-timepicker": "/resources/js/jquery-timepicker/jquery.timepicker.min",
+            "jquery-ui": "/resources/js/jquery-ui/jquery-ui.min",
+            "material": "/resources/js/material/material.min",
+            "moment-with-locales": "/resources/js/moment-with-locales/moment-with-locales.min",
+            "jquery": "/resources/js/jquery/jquery-1.11.1.min",
+            "jquery-debounce": "/resources/js/jquery-debounce/jquery-throttle-debounce.min",
+            "work-comment": "/resources/js/common/work-comment",
+            "ekko-lightbox": "/resources/js/ekko-lightbox/ekko-lightbox",
+            "jquery-mask": "/resources/js/jquery-mask/jquery.mask",
+            "clockpicker": "/resources/js/clockpicker/clockpicker",
+            "maskedinput-mobile": "/resources/js/maskedinput-mobile/jquery.maskedinput-mobile.min",
+            "jquery-validation": "/resources/js/jquery-validation/jquery.validate.min",
+            "jquery-validation-methods": "/resources/js/jquery-validation-methods/additional-methods",
+            "progress-spin": "/resources/js/progress-spin/progressSpin",
+            "raphael": "/resources/js/raphael/raphael",
+            "select2": "/resources/js/select2/select2.min",
+            "jquery-form": "/resources/js/jquery-form/jquery.form.min",
+            "jquery-serialize-object": "/resources/js/jquery-serialize-object/jquery.serialize-object.min",
+            "handlebars": "/resources/js/handlebars/handlebars-v3.0.3",
+            "uppod": "/resources/js/uppod/uppod",
+            "alertify": "/resources/js/alertify/alertify.min",
+            "requirejs-text": "/resources/js/requirejs-text/text",
+            "bootstrap": "/resources/js/bootstrap/bootstrap.min",
+            "bootstrap-datepicker-locale": "/resources/js/bootstrap-datepicker-locale/bootstrap-datepicker.ru.min",
+            "bootstrap-datepicker": "/resources/js/bootstrap-datepicker/custom_modified-bootstrap-datepicker",
+            "translator-js": "/resources/js/translator-js/translator.min",
+            "translator-config": "/js/translations/config",
+            "translations": "/js/translations/messages/ru",
+            "yandexMaps": "https://api-maps.yandex.ru/2.1/?lang=ru_RU",
+            "router-js": "/resources/js/router-js/router",
+            "router": "/js/fos_js_routes",
+            "recaptchaCallback": "https://www.google.com/recaptcha/api.js?onload=onloadCallbackRecaptcha&render=explicit",
+            "recaptcha": "https://www.google.com/recaptcha/api",
+            "modal-helper": "/resources/js/modal-helper/modalHelper",
+            "video-helper": "/resources/js/video-helper/videoHelper",
+            "shorten-helper": "/resources/js/shorten-helper/shortenHelper",
+            "modal-helper-mobile": "/resources/js/modal-helper-mobile/modalHelper-mobile",
+            "searchTable-helper": "/resources/js/searchTable-helper/searchTableHelper",
+            "searchTableLk-helper": "/resources/js/searchTableLk-helper/searchTableHelperLk",
+            "simpleTable-helper": "/resources/js/simpleTable-helper/simpleTableHelper",
+            "caseSearchField-helper": "/resources/js/helpers/caseSearchField-helper",
+            "modalImage-helper": "/resources/js/modalImage-helper/modalImage-helper",
+            "tooltip-helper": "/resources/js/tooltip-helper/tooltipHelper",
+            "flash-helper": "/resources/js/flash-helper/flashHelper",
+            "datePicker-helper": "/resources/js/datePicker-helper/datePicker-helper",
+            "dateTime-helper-mobile": "/resources/js/dateTime-helper-mobile/dateTime-helper-mobile",
+            "dateTime-helper": "/resources/js/dateTime-helper/dateTime-helper",
+            "cryptopro": "/resources/js/cryptopro/cadesplugin_api",
+            "cryptoproManager": "/resources/js/cryptoproManager/cryptoproManager",
+            "cryptoproAPI-ie": "/resources/js/cryptoproAPI-ie/cryptoproAPI-ie",
+            "cryptoproAPI-chrome": "/resources/js/cryptoproAPI-chrome/cryptoproAPI-chrome",
+            "spinnerHelper": "/resources/js/spinnerHelper/spinnerHelper",
+            "bootbox-helper": "/resources/js/bootbox-helper/bootboxHelper",
+            "twig-js-helper": "/resources/js/twig-js-helper/twigJsHelper",
+            "page-content-editor": "/resources/js/page-content-editor/page-content-editor",
+            "page-content-jstree-formatter": "/resources/js/page-content-jstree-formatter/page-content-jstree-formatter",
+            "upload-helper": "/resources/js/upload-helper/upload-helper",
+            "bootstrap-modal": "/resources/js/bootstrap-modal/bootstrap-modal-3.3.4",
+            "underscore": "/resources/js/underscore/underscore-min",
+            "sessionManager": "/resources/js/sessionManager/sessionManager",
+            "ckeditor-helper": "/resources/js/ckeditor-helper/ckeditorHelper",
+            "handlebarsHelper": "/resources/js/handlebarsHelper/handlebarsHelper",
+            "dataFormatter": "/resources/js/dataFormatter/dataFormatter",
+            "dataTables-helper": "/resources/js/dataTables-helper/dataTables-helper",
+            "jquery-treegrid": "/resources/js/jquery-treegrid/jquery.treegrid.min",
+            "jquery-treegrid-bootstrap-3": "/resources/js/jquery-treegrid-bootstrap-3/jquery.treegrid.bootstrap3",
+            "jquery-datatables": "/resources/js/jquery-datatables/jquery.dataTables.min",
+            "bootstrap-3": "/resources/js/bootstrap/bootstrap.min",
+            "bootbox": "/resources/js/bootbox/bootbox",
+            "bootstrap-select": "/resources/js/bootstrap-select/bootstrap-select",
+            "swfobject": "/resources/js/swfobject/swfobject.min",
+            "ckeditor": "../resources/libs/ckeditor/ckeditor",
+            "jstree": "/resources/js/jstree/jstree.min",
+            "twigjs": "/resources/js/twigjs/twig",
+            "page-visibility": "/resources/js/page-visibility/page-visibility",
+            "hls": "/resources/js/hls/hls.min",
+            "email-subscription": "/resources/js/common/email-subscription",
+            "plyr": "/resources/js/plyr/plyr.min",
+            "angular": "/resources/js/angular/angular.min",
+            "jquery-ui/ui/widget": "/resources/js/jquery-ui/ui/widget/jquery.ui.widget",
+            "jquery-iframe-transport": "/resources/js/jquery-iframe-transport/jquery.iframe-transport",
+            "jquery.fileupload": "/resources/js/jquery.fileupload/jquery.fileupload",
+            "jquery.fileupload-audio": "/resources/js/jquery.fileupload-audio/jquery.fileupload-audio",
+            "jquery.fileupload-video": "/resources/js/jquery.fileupload-video/jquery.fileupload-video",
+            "jquery.fileupload-image": "/resources/js/jquery.fileupload-image/jquery.fileupload-image",
+            "jquery.fileupload-process": "/resources/js/jquery.fileupload-process/jquery.fileupload-process",
+            "jquery.fileupload-validate": "/resources/js/jquery.fileupload-validate/jquery.fileupload-validate",
+            "jquery.file-upload-angular": "/resources/js/jquery.file-upload-angular/jquery.fileupload-angular",
+            "head": "/resources/js/head",
+            "marked": "/resources/libs/marked-0.7.0/marked.min",
+            "vendor": "https://mos-gorsud.ru/static/vendors.js?v=1b1",
+            "mainSearch": "https://mos-gorsud.ru/static/mainSearch.js?v=1b1",
+            "": "/resources/js/"
+        },
+        "shim": {
+            "tippy": {"deps": ["@popperjs/core"]},
+            "jquery-validation": {"deps": ["jquery"]},
+            "jquery-validation-methods": {"deps": ["jquery-validation"]},
+            "jquery-mask": {"deps": ["jquery"]},
+            "bootstrap": {"deps": ["jquery"]},
+            "bootbox": {"deps": ["jquery"]},
+            "bootstrap-modal": {"deps": ["jquery-ui"]},
+            "bootstrap-3": {"deps": ["jquery"]},
+            "jquery-ui": {"deps": ["jquery"]},
+            "progress-spin": {"deps": ["jquery", "raphael"]},
+            "jquery-form": {"deps": ["jquery"]},
+            "jquery-truncate": {"deps": ["jquery"]},
+            "jquery-serialize-object": {"deps": ["jquery"]},
+            "translations": {"deps": ["translator-config"]},
+            "translator-config": {"deps": ["translator-js"]},
+            "ekko-lightbox": {"deps": ["bootstrap"]},
+            "router": {"deps": ["router-js"]},
+            "handlebars": {"deps": ["translations", "router"]},
+            "upload-helper": {"deps": ["jquery-ui"]},
+            "spinnerHelper": {"deps": ["jquery-ui"]},
+            "cryptopro": {"deps": ["jquery"]},
+            "cryptoproManager": {"deps": ["cryptopro"]},
+            "sessionManager": {"deps": ["jquery"]},
+            "handlebarsHelper": {"deps": ["jquery"]},
+            "dataFormatter": {"deps": ["jquery"]},
+            "dateTime-helper": {"deps": ["new-design-logic-custom"]},
+            "dataTables-helper": {"deps": ["jquery-datatables"]},
+            "jquery-treegrid": {"deps": ["jquery"]},
+            "jquery-datatables": {"deps": ["jquery"]},
+            "bootstrap-select": {"deps": ["jquery", "bootstrap-3"]},
+            "jquery-treegrid-bootstrap-3": {"deps": ["jquery-treegrid"]},
+            "cases/navigation-controller": {"deps": ["jquery"]},
+            "croc-map-logic": {"deps": ["gmaps", "common/common-controller"]},
+            "gmaps": {"deps": ["googlemaps"]},
+            "jquery-debounce": {"deps": ["jquery"]},
+            "common/common-controller": {"deps": ["new-design-logic-custom", "modalImage-helper"]},
+            "email-subscription": {"deps": ['jquery', 'jquery-validation-methods', 'translations']},
+            "new-design-logic-custom": {"deps": ["new-design-logic"]},
+            "new-design-logic": {"deps": ["jquery-timepicker", "jquery-mousewheel", "jquery-ui", "slick", "jquery-truncate", "jquery-mask", "jquery-jscrollpane", "jquery-selectbox", "icheck", "jquery-validation-methods", "jquery-scrolltofixed", "head"]},
+            "mobile-scripts": {"deps": ["maskedinput-mobile", "clockpicker", "material", "moment-with-locales", "jquery-mousewheel", "jquery-ui", "slick", "jquery-selectbox", "icheck", "jquery-validation-methods", "jquery-scrolltofixed"]},
+            "icheck": {"deps": ["jquery"]},
+            "jquery-timepicker": {"deps": ["jquery-ui"]},
+            "jquery-jscrollpane": {"deps": ["jquery", "jquery-mousewheel"]},
+            "modal-helper": {"deps": ["jquery"]},
+            "video-helper": {"deps": ["jquery"]},
+            "clockpicker": {"deps": ["jquery"]},
+            "moment-with-locales": {"deps": ["jquery"]},
+            "material": {"deps": ["jquery"]},
+            "slick": {"deps": ["jquery"]},
+            "jquery-selectbox": {"deps": ["jquery"]},
+            "jquery-scrolltofixed": {"deps": ["jquery"]},
+            "cases/searchForm-view": {"deps": ["jquery"]},
+            "jurisdiction/departmental-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/casesIndex-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/territorial-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/ndCalculator-view": {"deps": ["jquery"]},
+            "jurisdiction/courtInformation-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/reception-view": {"deps": ["jquery-ui"]},
+            "jurisdiction/intellectualProperty-view": {"deps": ["jquery-ui"]},
+            "personalArea/certificateSelectionForm-view": {"deps": ["bootstrap-modal"]},
+            "bootstrap-datepicker-locale": {"deps": ["bootstrap-datepicker"]},
+            "datePicker-helper": {"deps": ["bootstrap-datepicker-locale"]},
+            "jquery-mousewheel": {"deps": ["jquery"]},
+            "twig-js-helper": {"deps": ["jquery"]},
+            "page-content-editor": {"deps": ["jquery"]},
+            "jstree": {"deps": ["jquery"]},
+            "swfobject": {"deps": ["jquery"]},
+            "page-visibility": {"deps": ["jquery"]},
+            "hls": {"deps": ["require"], "exports": "Hls"},
+            "head": {"deps": ["jquery", "jquery-scrolltofixed", "jquery-jscrollpane"]},
+            "marked": {'exports':'marked'},
+            "mainSearch": {"deps": ["vendor"]},
+        }
+    };</script>
+<script type="text/javascript" src="/js/requirejs/require.min.js?v=1b1"></script>
+    <script src="https://mos-gorsud.ru/static/vendors.js?v=1b1"></script>
+
+    <script type="text/javascript">
+        try {
+            var flashError = '[]';
+            flashError = JSON.parse(flashError);
+            if (!Array.isArray(flashError)) {
+                flashError = null;
+            }
+            if (flashError) {
+                require(['flash-helper'], function() {
+                    flashError.forEach(function(e) {
+                        $.flashHelper.showError(e, true)
+                    });
+                });
+            }
+        } catch (e) {
+        }
+
+        window.useRecaptcha = true;
+        window.reCaptchaApiKey = '6LeNDwwTAAAAALqwe2J0LOTEnIzUPmG_ZFmJMt7m';
+        window.isMobileVersion = false;
+
+        var onloadCallbackRecaptcha = function () {
+            window.renderRecaptcha();
+        };
+
+        requirejs.config({
+            waitSeconds: 60,
+            urlArgs: function (id, url) {
+                var args = 'v=' + '1b1';
+                return (url.indexOf('?') === -1 ? '?' : '&') + args;
+            }
+        });
+
+        require(['./common/common-controller']);
+    </script>
+
+            <link rel="icon" type="image/x-icon" href="/favicon.ico?v=1b1">
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="flash-helper" src="/resources/js/flash-helper/flashHelper.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="modalImage-helper" src="/resources/js/modalImage-helper/modalImage-helper.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="/resources/js/jquery/jquery-1.11.1.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="alertify" src="/resources/js/alertify/alertify.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-mousewheel" src="/resources/js/jquery-mousewheel/jquery.mousewheel-3.0.6.pack.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-ui" src="/resources/js/jquery-ui/jquery-ui.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="slick" src="/resources/js/slick/slick.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-truncate" src="/resources/js/jquery-truncate/jquery-truncate.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-mask" src="/resources/js/jquery-mask/jquery.mask.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-selectbox" src="/resources/js/jquery-selectbox/jquery.selectbox-0.2.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="icheck" src="/resources/js/icheck/icheck.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-scrolltofixed" src="/resources/js/jquery-scrolltofixed/jquery-scrolltofixed-min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-validation" src="/resources/js/jquery-validation/jquery.validate.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="modal-helper" src="/resources/js/modal-helper/modalHelper.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-jscrollpane" src="/resources/js/jquery-jscrollpane/jquery.jscrollpane.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="requirejs-text" src="/resources/js/requirejs-text/text.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-validation-methods" src="/resources/js/jquery-validation-methods/additional-methods.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="head" src="/resources/js/head.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery-timepicker" src="/resources/js/jquery-timepicker/jquery.timepicker.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="router-js" src="/resources/js/router-js/router.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="translator-js" src="/resources/js/translator-js/translator.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="new-design-logic" src="/resources/js/new-design-logic/croc.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="router" src="/js/fos_js_routes.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="translator-config" src="/js/translations/config.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="new-design-logic-custom" src="/resources/js/new-design-logic-custom/croc-custom.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="translations" src="/js/translations/messages/ru.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="handlebars" src="/resources/js/handlebars/handlebars-v3.0.3.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/common-controller" src="/resources/js/common/common-controller.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="work-comment" src="/resources/js/common/work-comment.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dateTime-helper" src="/resources/js/dateTime-helper/dateTime-helper.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="video-helper" src="/resources/js/video-helper/videoHelper.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="maskedinput-mobile" src="/resources/js/maskedinput-mobile/jquery.maskedinput-mobile.min.js?v=1b1"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="uppod" src="/resources/js/uppod/uppod.js?v=1b1"></script></head>
+<body>
+
+<div class="wrapp_old_browser" style="display: none;">
+    <div id="old_browser_notification" class="old-browser" style="display: none;">
+        <div class="container ta-center">
+            <p class="title">В этом браузере сайт может отображаться некорректно. Рекомендуем Вам установить более современный браузер.</p>
+            <a href="http://www.google.by/intl/ru/chrome/browser/" class="Chrome" rel="nofollow" target="_blank" title="Chrome"> <i class="ico"></i>Chrome</a>
+            <a href="https://www.apple.com/safari/" rel="nofollow" class="Safari" target="_blank" title="Safari"> <i class="ico"></i> Safari</a>
+
+            <a href="https://www.mozilla.org/ru/firefox/new/" rel="nofollow" class="Firefox" target="_blank" title="Firefox"> <i class="ico"></i>Firefox</a>
+            <a href="http://www.opera.com/ru" rel="nofollow" target="_blank" class="Opera" title="Opera"> <i class="ico"></i> Opera</a>
+            <a href="http://windows.microsoft.com/ru-ru/internet-explorer/download-ie" rel="nofollow" target="_blank" class="Explorer" title="IE"> <i class="ico"></i>Explorer</a>
+            <div class="old_browser_notification_Close"></div>
+        </div>
+    </div>
+</div>
+<div class="wrapper ">
+
+    <header class="header" style="height: 122px;"><div class="header-wrapper header-wrapper-sticky"><!----> <div class="search-overlay"><div></div></div> <div class="header-container"><div class="header-content"><div class="main-logo"><a href="https://mos-gorsud.ru/" title="На главную"><img src="https://mos-gorsud.ru/resources/img/logo_i.png?v=1b1" alt="На главную" class="main-logo__picture main-logo__picture_header"> <div class="main-logo__text main-logo__text_header"><div class="main-logo__unfixed-text">официальный портал</div> <div class="main-logo__unfixed-text">Судов общей юрисдикции</div> <div class="main-logo__fixed-text">Суды общей юрисдикции</div>
+                            города Москвы
+                        </div></a></div> <div class="header-search"><button class="form-search__question-btn search-focus-button"></button> <form><input type="text" autocomplete="off" maxlength="255" placeholder="Найдите дело или задайте вопрос помощнику" class="search-input"> <!----> <!----> <button type="submit" class="search-toggle"></button></form> <div class="header-search-suggest"><div><div class="block left-block"><h3><span class="block-header">СУДЕБНЫЕ ДЕЛА И ДОКУМЕНТЫ</span></h3> <div class="data-container cases"><div class="empty-results">Начните вводить номер дела, фамилию или
+                        наименование участника,
+                        наименование суда, категорию дела или статью, текст решения...
+                    </div></div> <!----></div> <div class="block right-block"><h3><span class="block-header">ИНТЕРАКТИВНЫЙ ПОМОЩНИК</span></h3> <div class="data-container scenarios"><div class="empty-results">Начните описывать жизненную ситуацию, в решении которой вам требуется помощь,
+                        или перейдите к списку ситуаций и подготовленных решений...
+                    </div> <div><a href="https://help.mos-gorsud.ru" class="scenario-help-link"><div class="scenario-help"><h4>ДЛЯ СВОЕЙ СИТУАЦИИ ВЫ УЗНАЕТЕ:</h4> <div><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAC0lEQVR4nGNgAAIAAAUAAXpeqz8="> <ul><li>Порядок действий</li> <li>Законы, регулирующие этот порядок</li> <li>Требуется ли обращение в суд</li></ul> <button>Узнать</button></div></div></a></div></div></div></div></div></div> <div class="socials"><a href="https://vk.com/mos_gor_sud" target="_blank" title="ВКонтакте" class="socials__social header_social"><img src="https://mos-gorsud.ru/resources/img/vk_header.svg" width="20" height="20" alt="ВКонтакте"></a> <a href="https://t.me/moscowcourts" target="_blank" title="Telegram" class="socials__social header_social"><img src="https://mos-gorsud.ru/resources/img/telegram_header.svg" width="20" height="20" alt="Telegram"></a></div></div></div> <div class="nav-container"><div class="court-selector"><a title="Выбрать суд из списка" class="dropdown-menu-toggle"><span>Суды общей юрисдикции</span> <div class="court-name">Выбрать суд из списка</div></a> <div class="dropdown-menu"><section class="ps-container ps"><ul><li><a href="https://mos-gorsud.ru/mgs"> Московский городской суд</a></li><li><a href="https://mos-gorsud.ru/rs/babushkinskij"> Бабушкинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/basmannyj"> Басманный районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/butyrskij"> Бутырский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/gagarinskij"> Гагаринский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/golovinskij"> Головинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/dorogomilovskij"> Дорогомиловский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/zamoskvoreckij"> Замоскворецкий районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/zelenogradskij"> Зеленоградский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/zyuzinskij"> Зюзинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/izmajlovskij"> Измайловский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/koptevskij"> Коптевский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/kuzminskij"> Кузьминский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/kuncevskij"> Кунцевский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/lefortovskij"> Лефортовский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/lyublinskij"> Люблинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/meshchanskij"> Мещанский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/nagatinskij"> Нагатинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/nikulinskij"> Никулинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/ostankinskij"> Останкинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/perovskij"> Перовский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/preobrazhenskij"> Преображенский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/presnenskij"> Пресненский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/savyolovskij"> Савёловский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/simonovskij"> Симоновский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/solncevskij"> Солнцевский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/taganskij"> Таганский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/tverskoj"> Тверской районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/timiryazevskij"> Тимирязевский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/troickij"> Троицкий районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/tushinskij"> Тушинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/hamovnicheskij"> Хамовнический районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/horoshevskij"> Хорошёвский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/cheryomushkinskij"> Черёмушкинский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/chertanovskij"> Чертановский районный суд</a></li><li><a href="https://mos-gorsud.ru/rs/shcherbinskij"> Щербинский районный суд</a></li></ul><div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 0px;"></div></div></section></div></div> <div class="top-menu"><a href="https://mos-gorsud.ru/search" title="Поиск по судебным делам"><span>Поиск по судебным делам</span></a> <a href="https://mos-gorsud.ru/hearing?hearingRangeDateFrom=29.03.2024" title="Судебные заседания"><span>Судебные заседания</span></a> <a href="https://mos-gorsud.ru/territorial" title="Территориальная подсудность"><span>Территориальная подсудность</span></a> <a href="https://mos-gorsud.ru/calc" title="Калькулятор госпошлины"><span>Калькулятор госпошлины</span></a> <a href="https://mos-gorsud.ru/lk/login"><span>Личный кабинет</span></a></div></div></div></header>
+    
+
+
+<script type="text/javascript">
+    var header = {
+        host: "https://mos-gorsud.ru/",
+        assistantHomeURL: 'https://help.mos-gorsud.ru',
+        logo: "https://mos-gorsud.ru/resources/img/logo_i.png?v=1b1",
+        topMenu: {
+            case: "https://mos-gorsud.ru/search",
+            hearings: "https://mos-gorsud.ru/hearing?hearingRangeDateFrom=29.03.2024",
+            territorial: "https://mos-gorsud.ru/territorial",
+            calc: "https://mos-gorsud.ru/calc",
+            lk: "https://mos-gorsud.ru/lk/login"
+        },
+        currentCourt: "Выбрать суд из списка",
+        courts: [
+                                               {url: "https://mos-gorsud.ru/mgs", name: "Московский городской суд"},
+                                                {url: "https://mos-gorsud.ru/rs/babushkinskij", name: "Бабушкинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/basmannyj", name: "Басманный районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/butyrskij", name: "Бутырский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/gagarinskij", name: "Гагаринский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/golovinskij", name: "Головинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/dorogomilovskij", name: "Дорогомиловский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/zamoskvoreckij", name: "Замоскворецкий районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/zelenogradskij", name: "Зеленоградский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/zyuzinskij", name: "Зюзинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/izmajlovskij", name: "Измайловский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/koptevskij", name: "Коптевский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/kuzminskij", name: "Кузьминский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/kuncevskij", name: "Кунцевский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/lefortovskij", name: "Лефортовский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/lyublinskij", name: "Люблинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/meshchanskij", name: "Мещанский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/nagatinskij", name: "Нагатинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/nikulinskij", name: "Никулинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/ostankinskij", name: "Останкинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/perovskij", name: "Перовский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/preobrazhenskij", name: "Преображенский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/presnenskij", name: "Пресненский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/savyolovskij", name: "Савёловский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/simonovskij", name: "Симоновский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/solncevskij", name: "Солнцевский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/taganskij", name: "Таганский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/tverskoj", name: "Тверской районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/timiryazevskij", name: "Тимирязевский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/troickij", name: "Троицкий районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/tushinskij", name: "Тушинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/hamovnicheskij", name: "Хамовнический районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/horoshevskij", name: "Хорошёвский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/cheryomushkinskij", name: "Черёмушкинский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/chertanovskij", name: "Чертановский районный суд"},
+                                                {url: "https://mos-gorsud.ru/rs/shcherbinskij", name: "Щербинский районный суд"},
+                    ],
+        user: {
+            id: "",
+            name: ""
+        },
+        maintenance: "",
+        loginTarget: ""
+    };
+</script>
+    <script src="https://mos-gorsud.ru/static/header.js?v=1b1"></script>
+
+    <main class="content">
+
+                                
+            
+
+<!--BEGIN left bar -->
+<aside class="left_bar">
+
+    
+        
+        
+        
+                    <div class="useful_links">
+    <div class="title"><span class="borderleft_title">Полезные ссылки</span></div>
+    <ul class="links_list">
+                <li><a href="/reception" title="Подать обращение">Подать обращение</a></li>
+        <li><a href="/faq" title="Вопросы и ответы">Вопросы и ответы</a></li>
+                <li><a href="/jury" title="Присяжные заседатели">Присяжные заседатели</a></li>
+
+        <li><a href="https://1ap.sudrf.ru/" target="_blank" rel="noreferrer" title="Первый апелляционный суд общей юрисдикции">Первый апелляционный суд общей юрисдикции</a></li>
+        <li><a href="https://2kas.sudrf.ru/" target="_blank" rel="noreferrer" title="Второй кассационный суд общей юрисдикции">Второй кассационный суд общей юрисдикции</a></li>
+
+                <li><a href="http://www.supcourt.ru/" target="_blank" rel="noreferrer" title="Верховный Cуд Российской Федерации">Верховный Cуд Российской Федерации</a></li>
+        <li><a href="http://www.ksrf.ru" target="_blank" rel="noreferrer" title="Конституционный Cуд Российской Федерации">Конституционный Cуд Российской Федерации</a></li>
+        <li><a href="http://mos-sud.ru/" target="_blank" rel="noreferrer" title="Портал мировых судей города Москвы">Портал мировых судей города Москвы</a></li>
+        <li><a href="http://usd.msk.sudrf.ru" target="_blank" rel="noreferrer" title="Управление Судебного департамента">Управление Судебного департамента</a></li>
+        <li><a href="https://sudrf.ru" target="_blank" rel="noreferrer" title="ГАС «Правосудие»">ГАС «Правосудие»</a></li>
+        <li><a href="https://adv.mos-gorsud.lawport.ru" target="_blank" rel="noreferrer" title="Портал для адвокатов Москвы">Портал для адвокатов Москвы</a></li>
+    </ul>
+</div>
+        
+                    <div class="sidebarslider-wrapper">
+                <div class="sidebar_slider slick-initialized slick-slider">
+                    <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 288px; left: 0px;"><div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 288px;">
+                        <a href="#" title="Сообщить о технической проблеме" class="js-work-comment" tabindex="0">
+                            <div class="text sidebar-review-text">
+                                <span>Сообщить о <br>технической проблеме</span>
+                                <img src="/resources/img/bubble_feedback.png?v=1b1" alt="Сообщить о технической проблеме">
+                            </div>
+                        </a>
+                    </div></div></div>
+                </div>
+                <div class="sidebar_slider slick-initialized slick-slider">
+                    <div aria-live="polite" class="slick-list draggable"><div class="slick-track" role="listbox" style="opacity: 1; width: 288px; left: 0px;"><div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide10" style="width: 288px;">
+                        <a href="/no-corruption" title="Противодействие коррупции" class="corruption-fight" tabindex="0">
+                            <div class="text sidebar-review-text">
+                                <span>Противодействие <br>коррупции</span>
+                                <img src="/resources/img/hand_corruption.png?v=1b1" width="45" alt="Противодействие коррупции">
+                            </div>
+                        </a>
+                    </div></div></div>
+                </div>
+            </div>
+        
+                                
+</aside>
+            <section class="middle_bar inner_nosider">
+                                                                                <div class="mainblock_title">
+                            
+<ul class="breadcrumb">
+            
+        <li>
+                            <a href="/" title="Главная">Главная</a>
+                    </li>
+            
+        <li>
+                            Поиск по судебным делам
+                    </li>
+    </ul>
+
+                        </div>
+                                    
+                                                                    <h1>Быстрый поиск по судебным делам</h1>
+                                                                <div id="content" style="visibility: visible; display: block;" class="wrapper_innercontent">
+                                        
+    <div><div class="megasearch-searchform"><form method="GET" role="search" action="/fastsearch" id="searchForm" class="form-search form-search-content"><input type="text" placeholder="Номер дела, участник, судья, суд, категория, статья, текст документа…" name="q" value="" autocomplete="off" maxlength="255" class="search-query"> <span title="Найти" class="magnifier"></span> <!----></form> <!----></div> <div id="searchResultContainer"><div class="loading-wrapper"><div class="resultsearch_text">
+                Найдено записей: 168833 <span>(показаны первые 10000)</span></div> <div class="clear"></div> <div class="wrapper-search-tables"><ul class="search-result-list"><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/rs/perovskij/services/cases/civil/details/14fea598-60be-4522-bbd5-b3d798a97227" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">02-1918/2016,
+                                Гражданские дела первой инстанции (Перовский районный суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Заявитель: "Сбербанк России" в лице филиала Московского банка ОАО "Сбербанк России"</div> <div class="megasearch-result-item-acts"><div><a href="/rs/perovskij/cases/docs/content/92594062-bbf2-4957-9632-e825a9f32ea5" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение о вступлении в дело третьего лица с самостоятельными требованиями</a> <p> ... кредитному договору, УСТАНОВИЛ: Заявитель ОАО «<span class="highlight">Сбербанк</span> России» в лице филиала – Московского ... лице филиала – Московского банка ОАО «<span class="highlight">Сбербанк</span> России» по доверенности, ранее извещенный ... в пользу открытого акционерного общества «<span class="highlight">Сбербанк</span> России» в лице филиала –  ... Московского банка ОАО «<span class="highlight">Сбербанк</span> России» (ИНН 7707083893; дата  ... лице филиала – Московского банка ПАО «<span class="highlight">Сбербанк</span> России» исполнительные листы на принудительное ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/mgs/services/cases/cassation-civil/details/811c5dc4-0f47-461d-8ae6-bf45bd95c7c3" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">4г-9520/2012,
+                                Пересмотр гражданских дел кассационной инстанции (Московский городской суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Сбербанк России (ОАО), Ответчик: Вергасов М.Ф., Представитель ответчика (частный): Поляков А.Н.</div> <div class="megasearch-result-item-acts"><div><a href="/mgs/cases/docs/content/d04102b9-9164-4cad-acd2-dd1f170110d8" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение об отказе в передаче дела для рассмотрения по существу в суд кассационной (надзорной) инстанции</a> <p> ... Также просил применить к требованиям <span class="highlight">Сбербанка</span> России (ОАО) срок исковой  ...  ЗАО «Эконом-Альянс» в пользу <span class="highlight">Сбербанка</span> России (ОАО) по решению  ... обязательств по кредитному договору между <span class="highlight">Сбербанком</span> России (ОАО) и Вергасовым  ... поручительства, п. 5.1.6. кредитного договора <span class="highlight">Сбербанк</span> России (ОАО) вправе потребовать  ... с ЗАО «ЭкономАльянс» в пользу <span class="highlight">Сбербанка</span> России (ОАО) взыскана задолженность  ...  требований к Вергасову М.Ф., <span class="highlight">Сбербанку</span> России (ОАО) о признании  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/rs/nagatinskij/services/cases/civil/details/e9d807b9-e34c-42b1-b546-60abc9d82a35" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">02-2055/2016,
+                                Гражданские дела первой инстанции (Нагатинский районный суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Сбербанк России, Ответчик: Касаримова А. Н.</div> <div class="megasearch-result-item-acts"><div><a href="/rs/nagatinskij/cases/docs/content/b6e4d20c-983a-45e1-8419-f5a2e716b809" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Заочное решение</a> <p> ...  в одностороннем порядке сформулированы <span class="highlight">Сбербанком</span> России в Условиях Возможность  ... на условиях определенных Тарифами <span class="highlight">Сбербанка</span> При этом <span class="highlight">Сбербанк</span> России обязуется ежемесячно  ...  ответчиком условий заключенного договора <span class="highlight">Сбербанк</span> имеет право досрочно потребовать  ... исковые требования Публичного акционерного общества <span class="highlight">Сбербанк</span> России обоснованными и подлежащими  ... на условиях определенных Тарифами <span class="highlight">Сбербанка</span> При этом <span class="highlight">Сбербанк</span> России обязуется ежемесячно  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/5d3997c3-baaa-43e8-9345-9d7b3055d9fa" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">33-26985/2016,
+                                Гражданские дела апелляционной инстанции (Московский городской суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Болотов В.С., Ответчик: Сбербанк России</div> <div class="megasearch-result-item-acts"><div><a href="/mgs/cases/docs/content/54061432-e4c5-469d-bf12-778f36746118" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение суда апелляционной инстанции </a> <p> ... требованиях настаивал. Представитель ответчика ОАО «<span class="highlight">Сбербанк</span> России» в судебное заседание явился ... с условиями использования международных карт <span class="highlight">Сбербанка</span> России и тарифами банка,  ... на выпуск обслуживание международной карты <span class="highlight">Сбербанка</span> России. Настоящий договор является  ... заявлении на получение международной карты <span class="highlight">Сбербанка</span> России. Во исполнение заключенного  ... при совершении операций через систему «<span class="highlight">Сбербанк</span> Онлайн», определены заключенным договором.  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/rs/tushinskij/services/cases/civil/details/012848c8-bc4f-4bf3-9d46-9ca955770eaa" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">02-7121/2016,
+                                Гражданские дела первой инстанции (Тушинский районный суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Сбербанк России, Ответчик: Мордвинцев О.В.</div> <div class="megasearch-result-item-acts"><div><a href="/rs/tushinskij/cases/docs/content/190d65e1-13b5-488d-a5ef-42cf196b6dca" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Решение</a> <p> ...  нарушением условий кредитного договора, ПАО <span class="highlight">Сбербанк</span> в лице филиала – Московского банка ...  ПАО <span class="highlight">Сбербанк</span> просит его расторгнуть, взыскать сумму ...  договор № *, заключенный 21.10.2013 между ОАО «<span class="highlight">Сбербанк</span> России» в лице Филиала - ...  лице Филиала – Московского банка ПАО <span class="highlight">Сбербанк</span> задолженность по кредитному договору № * от ...  лице Филиала – Московского банка ПАО <span class="highlight">Сбербанк</span> задолженность по кредитному договору № * от ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/mgs/services/cases/cassation-civil/details/80bfbfc1-dbec-4418-b9a5-de9dee67ad0a" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">4г-1407/2019,
+                                Пересмотр гражданских дел кассационной инстанции (Московский городской суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Сбербанк России, Ответчик: Ларицкий А.Э.</div> <div class="megasearch-result-item-acts"><div><a href="/mgs/cases/docs/content/0413e200-2775-4fb9-a99b-ce582172fa87" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение об отказе в передаче дела для рассмотрения по существу в суд кассационной (надзорной) инстанции</a> <p> ... поручительства). 28.01.2014г. между ОАО «<span class="highlight">Сбербанк</span> России» и Компанией «Ремигал  ... часть материального ущерба, причиненного ПАО «<span class="highlight">Сбербанк</span> России» в результате преступления,  ... частичном удовлетворении исковых требований ПАО «<span class="highlight">Сбербанк</span> России» и Компании «Ремигал  ... от 28.01.2014г., заключенный между ПАО «<span class="highlight">Сбербанк</span> России» и Компанией «Ремигал Консалтантс ... что, заключая договор цессии, ПАО «<span class="highlight">Сбербанк</span> России» передало Компании недействительное  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/rs/gagarinskij/services/cases/civil/details/50750462-6d18-49a6-8cca-c2f3bb7ff0d2" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">02-0551/2017,
+                                Гражданские дела первой инстанции (Гагаринский районный суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Есипов О.А., Ответчик: Сбербанк России</div> <div class="megasearch-result-item-acts"><div><a href="/rs/gagarinskij/cases/docs/content/8b4aae19-dbe0-4317-bc42-a49f4d0115b3" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение суда апелляционной инстанции </a> <p> ... физических лиц ПАО <span class="highlight">Сбербанк</span>, Условиях использования карт ПАО <span class="highlight">Сбербанк</span>, Памятке Держателя  ...  пользователя, логине, паролях системы «<span class="highlight">Сбербанк</span> ОнЛ@йн» станет известной  ... самообслуживания, систему «Мобильный банк», систему «<span class="highlight">Сбербанк</span> ОнЛ@йн» с использованием  ... пользователя, введенного клиентом в систему «<span class="highlight">Сбербанк</span> 0нЛ@йн», идентификатору пользователя,  ...  интернет-браузер или мобильное приложение «<span class="highlight">Сбербанк</span> ОнЛ@йн», которое устанавливается  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/rs/timiryazevskij/services/cases/civil/details/19b9251c-806c-4e69-80b8-2f3045b2a67a" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">02-4275/2016,
+                                Гражданские дела первой инстанции (Тимирязевский районный суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: "Сбербанк России", Ответчик: Михеев В.Г.</div> <div class="megasearch-result-item-acts"><div><a href="/rs/timiryazevskij/cases/docs/content/f5269afe-285e-49ef-96c3-fdc8c03a9ccb" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Решение</a> <p> ... средств в сумме …, принадлежащих ОАО «<span class="highlight">Сбербанк</span> России», причинив ему имущественных вред ... средств в сумме …, принадлежащих ОАО «<span class="highlight">Сбербанк</span> России», причинив ему имущественных вред ... средств в сумме …, принадлежащих ОАО «<span class="highlight">Сбербанк</span> России», причинив ему имущественных вред ... средств в сумме …, принадлежащих ОАО «<span class="highlight">Сбербанк</span> России», причинив ему имущественных вред ...  № … от … заключенному между ПАО <span class="highlight">Сбербанк</span> и Смирновым Д.В., совершил путем ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/b2877436-9622-4e63-99de-d991591cf4b9" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">33-14953/2014,
+                                Гражданские дела апелляционной инстанции (Московский городской суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Потребители РУ, Ответчик: Сбербанк</div> <div class="megasearch-result-item-acts"><div><a href="/mgs/cases/docs/content/55754889-8c05-46ff-a472-8e1d4929a6b9" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение суда апелляционной инстанции </a> <p> ... банковского вклада «Пенсионный пополняемый депозит <span class="highlight">Сбербанка</span> России», сумма вклада составила ****  ...  обслуживания физических лиц ОАО «<span class="highlight">Сбербанк</span> России», которые, наряду с  ... договоров. Согласно Порядку предоставления ОАО «<span class="highlight">Сбербанк</span> России» услуг по проведению  ... обслуживания (устройства самообслуживания банка, систему «<span class="highlight">Сбербанк</span> ОнЛ@йн», «мобильный банк»,  ... банковского обслуживания физических лиц ОАО «<span class="highlight">Сбербанк</span> России», с использованием карты  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/a4cf0a45-8dcd-4be7-818f-134afebae17f" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">33-30635/2017,
+                                Гражданские дела апелляционной инстанции (Московский городской суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Гришин С.К., Ответчик: Сбербанк России</div> <div class="megasearch-result-item-acts"><div><a href="/mgs/cases/docs/content/9338b0f6-b7ee-4e1b-b1a8-089ffadf8554" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение суда апелляционной инстанции </a> <p> ... договор № *** о вкладе «Пенсионный-плюс <span class="highlight">Сбербанка</span> России», по условиям которого Банк ...  является владельцем вклада «Пенсионный – плюс <span class="highlight">Сбербанка</span> России» счет № ***, вклада «Управляй ... счет № *** и держателем банковской карты <span class="highlight">Сбербанк</span> – Maestro Социальная № ***, Порядок использования  ...  обслуживания физических лиц ПАО «<span class="highlight">Сбербанк</span> России», с которыми согласно  ...  пользователя, логине, паролях системы «<span class="highlight">Сбербанк</span> Онлайн» станет известной иным  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/f93f4bfa-d94d-4c5b-a076-f36d3059441b" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">33-13187/2017,
+                                Гражданские дела апелляционной инстанции (Московский городской суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Тихомиров П.Ю., Тихомирова Д.В., Ответчик: Сбербанк России</div> <div class="megasearch-result-item-acts"><div><a href="/mgs/cases/docs/content/5ffa7549-b39d-4fb8-8524-1d31650bf06c" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение суда апелляционной инстанции </a> <p> ...  * к Публичному акционерному обществу «<span class="highlight">Сбербанк</span> России» о защите прав  ... инстанции отменить. Представитель ответчика ПАО «<span class="highlight">Сбербанк</span> России» по доверенности Гладышев  ...  подключение клиента к системе «<span class="highlight">Сбербанк</span> Онлайн» путем получения идентификатора пользователя ... операции совершены с использованием системы <span class="highlight">Сбербанк</span> онлайн с дополнительной карты №  ... регистрации в мобильном приложении системы <span class="highlight">Сбербанк</span> Онлайн (система дистанционного обслуживания)  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/103006e1-7da5-4f25-b78d-a40cca5d8644" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">33-17847/2017,
+                                Гражданские дела апелляционной инстанции (Московский городской суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: "Сбербанк России", Ответчик: Диденко О.А., Купцова К.О.</div> <div class="megasearch-result-item-acts"><div><a href="/mgs/cases/docs/content/7e01a98e-27ce-4313-aaa8-31fd3d1c3daa" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение суда апелляционной инстанции </a> <p> ... дата № ***, заключенный между ПАО «<span class="highlight">Сбербанк</span> России» и фио. Расторгнуть кредитный ... дата № ***, заключенный между ПАО «<span class="highlight">Сбербанк</span> России» и фио. Взыскать  ...  фио в пользу ПАО «<span class="highlight">Сбербанк</span> России» задолженность по кредитному  ...  ему международной кредитной карты <span class="highlight">Сбербанка</span> Gold Mastercard с предоставляемым  ...  дата, заключенный между ПАО «<span class="highlight">Сбербанк</span> России» и Купцовым О.М.,  ...  ему международной кредитной карты <span class="highlight">Сбербанка</span> Gold Mastercard с предоставляемым  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/rs/butyrskij/services/cases/civil/details/b37f4e77-8368-484e-8b5c-2c80f1f68808" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">02-3555/2015,
+                                Гражданские дела первой инстанции (Бутырский районный суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Каспар Д.А., ОАО "Сбербанк России" в лице филиала Московского банка ОАО "Сбербанк России", Ответчик: Сбербанк России (ОАО) и еще 1 участник</div> <div class="megasearch-result-item-acts"><div><a href="/rs/butyrskij/cases/docs/content/155a2f85-51d0-47ea-a86c-104d23ebe59d" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Решение</a> <p> ... признать договор незаключенным. Представитель ОАО «<span class="highlight">Сбербанк</span> России» в судебное заседание  ... считает, что исковые требования ОАО «<span class="highlight">Сбербанк</span> России» обоснованы и подлежат  ... заключенный между Открытым акционерным обществом «<span class="highlight">Сбербанк</span> России» и *** Дмитрием Александровичем, с ... в пользу Открытого акционерного общества «<span class="highlight">Сбербанк</span> России» с *** Дмитрия Александровича  ... требований *** Дмитрия Александровича к ОАО «<span class="highlight">Сбербанк</span> России» о признании кредитного  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/14971eda-3e8e-4fa4-ba7c-5e8cb9683c58" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">33-35457/2015,
+                                Гражданские дела апелляционной инстанции (Московский городской суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: "Сбербанк России", Ответчик: Нестерова Н.М.</div> <div class="megasearch-result-item-acts"><div><a href="/mgs/cases/docs/content/b51934f5-982d-487e-9581-1bb1f2da37cc" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Определение суда апелляционной инстанции </a> <p> ... Московского банка ОАО «<span class="highlight">Сбербанк</span> России» удовлетворены, УСТАНОВИЛА: ОАО «<span class="highlight">Сбербанк</span> России» в лице ...  Московского банка ОАО «<span class="highlight">Сбербанк</span> России» (ныне ПАО «<span class="highlight">Сбербанк</span> России») обратилось в ... просроченная задолженность. Представитель истца ОАО «<span class="highlight">Сбербанк</span> России» в лице филиала  ... Судом постановлено: Исковые требования ОАО «<span class="highlight">Сбербанк</span> России» в лице филиала –  ... апелляционной инстанции явился представитель ПАО «<span class="highlight">Сбербанк</span> России» по доверенности Прокофьева  ... </p></div></div></li><li class="megasearch-result-item"><a href="https://mos-gorsud.ru/rs/nagatinskij/services/cases/civil/details/f63fb914-77b8-48fd-b458-b9c9d2fa97a8" target="_blank" title="Ознакомиться с судебным делом" class="megasearch-result-item-link"><h3 class="megasearch-result-item-linktext">02-0316/2016,
+                                Гражданские дела первой инстанции (Нагатинский районный суд)
+                            </h3></a> <div class="megasearch-result-item-text">Стороны:&nbsp;Истец: Радионова В. И., Ответчик: "Сбербанк России"</div> <div class="megasearch-result-item-acts"><div><a href="/rs/nagatinskij/cases/docs/content/d98aa7c2-2939-462a-8202-0fd41407330f" target="_blank" title="Скачать документ" class="megasearch-result-item-act">Решение</a> <p> ...  подозрением на компрометацию доступа к <span class="highlight">Сбербанк</span> Онлайн клиент обратился в *** № ***, ...  компрометацию доступа к <span class="highlight">Сбербанк</span> Онлайн. По заключению <span class="highlight">Сбербанка</span>, клиент предпринял все ... выводу, что по результатам проведенной <span class="highlight">Сбербанком</span> проверки (л-д 116-117) достоверно  ... доказательствами не подтверждены. Напротив, проведенной <span class="highlight">Сбербанком</span> проверкой указанные обстоятельства не  ...  России» удовлетворить. Взыскать с ПАО «<span class="highlight">Сбербанк</span> России» в пользу Радионовой В.И. ... </p></div></div></li></ul> <div class="paginationContainer" style="margin-top: 40px;"><div class="pagenav text-center"><ul><li><button title="В начало" disabled="disabled" class="begining"></button></li> <li><button title="Предыдущая" disabled="disabled" class="prev"></button></li> <li class="active"><form id="paginationForm" action="" method="get" data-control="set">
+                                    Страница <input type="text" name="page" data-max="667"> из <span>667</span></form></li> <li><button title="Следующая" class="next"></button></li> <li><button title="В конец" class="intheend"></button></li></ul></div></div></div> <!----></div></div> <!----></div>
+    <script type="text/javascript" src="https://mos-gorsud.ru/static/fastsearch.js?v=1b1"></script>
+                </div>
+            </section>
+
+            
+            <div class="clear"></div>
+            </main>
+</div>
+
+<div id="cookie-disclaimer" class="cd-hidden">
+    <div class="cd-text">
+        <p class="cd-dis-bold">Официальный портал судов общей юрисдикции города Москвы использует
+            <a href="https://mos-gorsud.ru/cookie" target="_blank">файлы cookie</a> с целью персонализации сервисов и повышения удобства пользования порталом.</p>
+        <p>Если вы не хотите использовать файлы cookie, измените настройки браузера.</p>
+    </div>
+    <div class="cd-close-button"></div>
+</div>
+<script>
+    function hideCookieDisclaimer() {
+        document.querySelector('#cookie-disclaimer').classList.add('cd-hidden');
+        document.cookie = 'c-dis=1; max-age=' + (10 * 60 * 60 * 24 * 365); //10 years
+    }
+
+    function showCookieDisclaimer() {
+        document.querySelector('#cookie-disclaimer .cd-close-button').addEventListener('click', hideCookieDisclaimer);
+        if (document.cookie.indexOf('c-dis=1') === -1) {
+            document.querySelector('#cookie-disclaimer').classList.remove('cd-hidden');
+        }
+    }
+
+    window.addEventListener('load', showCookieDisclaimer);
+</script>
+<!-- BEGIN footer -->
+<footer class="footer_wrapper">
+    <section class="footer">
+        <div class="left_block">
+            <div class="social_icons">
+                <noindex><a href="https://vk.com/moscowcourt" class="icon_vk" title="Вконтакте"></a></noindex>
+            </div>
+            <div class="copyright">
+                © 2010–2024 Официальный портал судов общей юрисдикции г. Москвы
+                
+                            </div>
+        </div>
+        <div class="middle_block">
+            <ul>
+                <li><a href="https://mos-gorsud.ru/npa" title="Нормативно-правовые акты">Нормативно-правовые акты</a></li>
+                <li><a href="https://mos-gorsud.ru/is-and-db" title="Перечни информационных систем и банков данных, находящихся в ведении судов">Перечни информационных систем и банков данных, находящихся в ведении судов</a></li>
+            </ul>
+        </div>
+        <div class="right_block">
+            <ul>
+                <li><a href="/judicial-community" title="Органы судейского сообщества">Органы судейского сообщества</a>
+                </li>
+                                                <li><a href="/prohibited?hearingRangeDateFrom=29.03.2024" title="Извещения о времени и месте рассмотрения административных дел в порядке главы 27.1 КАС РФ, 27.2 КАС РФ">Извещения о времени и месте рассмотрения административных дел в порядке главы 27.1 КАС РФ, 27.2 КАС РФ</a>
+                    </li>
+                                                                                            </ul>
+        </div>
+        <div class="aside_right_block">
+            <ul>
+                <li><a href="https://data.mos-gorsud.ru" target="_blank" rel="noreferrer" title="Портал открытых данных судов общей юрисдикции г. Москвы">Портал открытых данных судов общей юрисдикции г. Москвы</a></li>
+                <li><a href="/mgs/defend" title="Защита интеллектуальных прав">Защита интеллектуальных прав</a>
+            </li></ul>
+        </div>
+    </section>
+</footer>
+
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                m[i].l = 1 * new Date();
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+            ym(1187093, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true
+            });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/1187093" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        var t = "script";
+        var p = document.location.protocol;
+        var j = document.createElement(t);
+        j.async = true;
+        j.type = "text/javascript";
+        j.src = ("https:" == p ? "https:" : "http:") + "//stat.sputnik.ru/cnt.js";
+        var s = document.getElementsByTagName(t)[0];
+        s.parentNode.insertBefore(j, s);
+    });
+</script>
+
+
+<div id="modal-dialog-container"></div></body></html>

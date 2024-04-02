@@ -1,0 +1,527 @@
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/nagatinskij/services/cases/civil/details/e9d807b9-e34c-42b1-b546-60abc9d82a35: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 107, in get_page_title
+    dict_value = await get_info(html)
+TypeError: object dict can't be used in 'await' expression
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/perovskij/services/cases/civil/details/14fea598-60be-4522-bbd5-b3d798a97227: object dict can't be used in 'await' expression
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 107, in get_page_title
+    dict_value = await get_info(html)
+TypeError: object dict can't be used in 'await' expression
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/mgs/services/cases/cassation-civil/details/811c5dc4-0f47-461d-8ae6-bf45bd95c7c3: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 59, in __aexit__
+    await self._event.value
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 34, in value
+    return mapping.from_maybe_impl(await self._future)
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/nagatinskij/services/cases/civil/details/e9d807b9-e34c-42b1-b546-60abc9d82a35: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 59, in __aexit__
+    await self._event.value
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 34, in value
+    return mapping.from_maybe_impl(await self._future)
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/mgs/services/cases/cassation-civil/details/811c5dc4-0f47-461d-8ae6-bf45bd95c7c3: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 59, in __aexit__
+    await self._event.value
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 34, in value
+    return mapping.from_maybe_impl(await self._future)
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/gagarinskij/services/cases/civil/details/50750462-6d18-49a6-8cca-c2f3bb7ff0d2: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/gagarinskij/cases/docs/content/00802c5�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/gagarinskij/cases/docs/content/8b4aae1�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="06.09.2017").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/gagarinskij/cases/docs/content/00802c5�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/gagarinskij/cases/docs/content/8b4aae1�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="06.09.2017").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/timiryazevskij/services/cases/civil/details/19b9251c-806c-4e69-80b8-2f3045b2a67a: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/timiryazevskij/cases/docs/content/f526�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="24.10.2016").get_by_role("link")
+    2) <a href="/rs/timiryazevskij/cases/docs/content/54d4�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="�������������� ������� ������� ����").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/timiryazevskij/cases/docs/content/f526�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="24.10.2016").get_by_role("link")
+    2) <a href="/rs/timiryazevskij/cases/docs/content/54d4�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="�������������� ������� ������� ����").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/mgs/services/cases/cassation-civil/details/80bfbfc1-dbec-4418-b9a5-de9dee67ad0a: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 59, in __aexit__
+    await self._event.value
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 34, in value
+    return mapping.from_maybe_impl(await self._future)
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/tushinskij/services/cases/civil/details/012848c8-bc4f-4bf3-9d46-9ca955770eaa: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 59, in __aexit__
+    await self._event.value
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_async_base.py", line 34, in value
+    return mapping.from_maybe_impl(await self._future)
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded while waiting for event "download"
+=========================== logs ===========================
+waiting for event "download"
+============================================================
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/gagarinskij/services/cases/civil/details/50750462-6d18-49a6-8cca-c2f3bb7ff0d2: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/gagarinskij/cases/docs/content/00802c5�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/gagarinskij/cases/docs/content/8b4aae1�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="06.09.2017").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/gagarinskij/cases/docs/content/00802c5�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/gagarinskij/cases/docs/content/8b4aae1�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="06.09.2017").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/timiryazevskij/services/cases/civil/details/19b9251c-806c-4e69-80b8-2f3045b2a67a: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/timiryazevskij/cases/docs/content/f526�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="24.10.2016").get_by_role("link")
+    2) <a href="/rs/timiryazevskij/cases/docs/content/54d4�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="�������������� ������� ������� ����").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/timiryazevskij/cases/docs/content/f526�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="24.10.2016").get_by_role("link")
+    2) <a href="/rs/timiryazevskij/cases/docs/content/54d4�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="�������������� ������� ������� ����").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/63644750-ef03-11ed-b324-7543c0afa4fe: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/mgs/cases/docs/content/647ce340-ef03-11ed�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/mgs/cases/docs/content/98974d90-52cd-11ee�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ���� ������������� ��������� ������� ����").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/mgs/cases/docs/content/647ce340-ef03-11ed�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/mgs/cases/docs/content/98974d90-52cd-11ee�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ���� ������������� ��������� ������� ����").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/tushinskij/services/cases/civil/details/610bfab4-ec3d-4f7f-bcc1-c1049004de7a: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/tushinskij/cases/docs/content/2166cf55�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="02.11.2018").get_by_role("link")
+    2) <a href="/rs/tushinskij/cases/docs/content/6865840c�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="22.07.2020").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/tushinskij/cases/docs/content/2166cf55�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="02.11.2018").get_by_role("link")
+    2) <a href="/rs/tushinskij/cases/docs/content/6865840c�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="22.07.2020").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/63644750-ef03-11ed-b324-7543c0afa4fe: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/mgs/cases/docs/content/647ce340-ef03-11ed�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/mgs/cases/docs/content/98974d90-52cd-11ee�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ���� ������������� ��������� ������� ����").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/mgs/cases/docs/content/647ce340-ef03-11ed�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/mgs/cases/docs/content/98974d90-52cd-11ee�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ���� ������������� ��������� ������� ����").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/tushinskij/services/cases/civil/details/610bfab4-ec3d-4f7f-bcc1-c1049004de7a: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/tushinskij/cases/docs/content/2166cf55�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="02.11.2018").get_by_role("link")
+    2) <a href="/rs/tushinskij/cases/docs/content/6865840c�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="22.07.2020").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/tushinskij/cases/docs/content/2166cf55�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="02.11.2018").get_by_role("link")
+    2) <a href="/rs/tushinskij/cases/docs/content/6865840c�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="22.07.2020").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/d07a2a70-beb4-11eb-b512-a74bfc7ee3ef: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/mgs/cases/docs/content/d0d73e90-beb4-11eb�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ������� ����").get_by_role("link")
+    2) <a href="/mgs/cases/docs/content/302ab1c0-de26-11eb�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ���� ������������� ��������� ������� ����").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/mgs/cases/docs/content/d0d73e90-beb4-11eb�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ������� ����").get_by_role("link")
+    2) <a href="/mgs/cases/docs/content/302ab1c0-de26-11eb�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ���� ������������� ��������� ������� ����").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/taganskij/services/cases/civil/details/4b00cc48-db60-4af4-ad03-314236b9f8ad: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/taganskij/cases/docs/content/e8a2a2a0-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/taganskij/cases/docs/content/e4496b57-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="30.10.2018").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/taganskij/cases/docs/content/e8a2a2a0-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/taganskij/cases/docs/content/e4496b57-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="30.10.2018").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/zelenogradskij/services/cases/civil/details/91593a66-d8d6-41ea-b5e3-cbc2227e2c82: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 3 elements:
+    1) <a href="/rs/zelenogradskij/cases/docs/content/344d�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/zelenogradskij/cases/docs/content/c594�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="10.03.2020").get_by_role("link")
+    3) <a href="/rs/zelenogradskij/cases/docs/content/45fc�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="22.01.2021").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 3 elements:
+    1) <a href="/rs/zelenogradskij/cases/docs/content/344d�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/zelenogradskij/cases/docs/content/c594�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="10.03.2020").get_by_role("link")
+    3) <a href="/rs/zelenogradskij/cases/docs/content/45fc�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="22.01.2021").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/preobrazhenskij/services/cases/civil/details/d778d452-5795-4a9b-a8d4-c3ba32e64bf4: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/preobrazhenskij/cases/docs/content/b7c�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="10.12.2018").get_by_role("link")
+    2) <a href="/rs/preobrazhenskij/cases/docs/content/202�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="22.02.2019").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/preobrazhenskij/cases/docs/content/b7c�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="10.12.2018").get_by_role("link")
+    2) <a href="/rs/preobrazhenskij/cases/docs/content/202�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="22.02.2019").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/zamoskvoreckij/services/cases/civil/details/e2e5e020-54d9-4b42-8f12-353cea201681: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/zamoskvoreckij/cases/docs/content/c2b5�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="16.12.2016").get_by_role("link")
+    2) <a href="/rs/zamoskvoreckij/cases/docs/content/98a4�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="16.01.2017").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/zamoskvoreckij/cases/docs/content/c2b5�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="16.12.2016").get_by_role("link")
+    2) <a href="/rs/zamoskvoreckij/cases/docs/content/98a4�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="16.01.2017").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/timiryazevskij/services/cases/civil/details/2aada067-ecca-4ae4-906e-dc60524a92a2: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/timiryazevskij/cases/docs/content/54ed�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="29.07.2016").get_by_role("link")
+    2) <a href="/rs/timiryazevskij/cases/docs/content/7b6e�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="26.08.2016").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/timiryazevskij/cases/docs/content/54ed�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="29.07.2016").get_by_role("link")
+    2) <a href="/rs/timiryazevskij/cases/docs/content/7b6e�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="26.08.2016").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/koptevskij/services/cases/civil/details/3a46e6e9-2bd0-4fd5-b4d1-28f4289c3c85: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/koptevskij/cases/docs/content/b243a1b8�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="27.06.2016").get_by_role("link")
+    2) <a href="/rs/koptevskij/cases/docs/content/e44fa5ac�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="01.07.2016").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/koptevskij/cases/docs/content/b243a1b8�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="27.06.2016").get_by_role("link")
+    2) <a href="/rs/koptevskij/cases/docs/content/e44fa5ac�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="01.07.2016").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/timiryazevskij/services/cases/civil/details/9244c502-9592-4742-b926-40195699fa5e: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/timiryazevskij/cases/docs/content/e761�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="23.06.2016").get_by_role("link")
+    2) <a href="/rs/timiryazevskij/cases/docs/content/aa84�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="28.06.2016").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/timiryazevskij/cases/docs/content/e761�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="23.06.2016").get_by_role("link")
+    2) <a href="/rs/timiryazevskij/cases/docs/content/aa84�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="28.06.2016").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/ostankinskij/services/cases/civil-exec/details/a2ba5196-d149-48dd-b25d-b7d500916ea0: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/ostankinskij/cases/docs/content/b9a2a2�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� � ������ �������������� ������� ����").get_by_role("link")
+    2) <a href="/rs/ostankinskij/cases/docs/content/49a7da�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� �� ��������� � ������� ������������ ���������������� (���������� �������) ������� ����").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/ostankinskij/cases/docs/content/b9a2a2�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� � ������ �������������� ������� ����").get_by_role("link")
+    2) <a href="/rs/ostankinskij/cases/docs/content/49a7da�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� �� ��������� � ������� ������������ ���������������� (���������� �������) ������� ����").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/mgs/services/cases/appeal-civil/details/aad2867e-a4d4-418c-9165-ffd70d2f0cdf: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/mgs/cases/docs/content/3a04915b-cdb2-4076�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/mgs/cases/docs/content/eb12d3f0-7679-42e1�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ���� ������������� ��������� ������� ����").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/mgs/cases/docs/content/3a04915b-cdb2-4076�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/mgs/cases/docs/content/eb12d3f0-7679-42e1�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="����������� ���� ������������� ��������� ������� ����").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/perovskij/services/cases/civil/details/dffaee2d-3b03-489b-9014-c64d81dddd14: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/perovskij/cases/docs/content/84af319a-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="15.06.2020 ������� ������� ����").get_by_role("link")
+    2) <a href="/rs/perovskij/cases/docs/content/18eb8e9a-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="19.06.2020").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/perovskij/cases/docs/content/84af319a-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="15.06.2020 ������� ������� ����").get_by_role("link")
+    2) <a href="/rs/perovskij/cases/docs/content/18eb8e9a-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="19.06.2020").get_by_role("link")
+
+AsyncPageLoader - ERROR - ������ ��� �������� https://mos-gorsud.ru/rs/butyrskij/services/cases/civil/details/849b703e-9cf1-47a0-ab1b-a6c7ef8b978b: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/butyrskij/cases/docs/content/5ff217f1-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/butyrskij/cases/docs/content/a65835a1-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="24.11.2016").get_by_role("link")
+Traceback (most recent call last):
+  File "c:\Data\Visual Studio\Kursova_2\parser_2.py", line 97, in get_page_title
+    await page.get_by_role("link", name="������� ����").click()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\async_api\_generated.py", line 15786, in click
+    await self._impl_obj.click(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_locator.py", line 158, in click
+    return await self._frame.click(self._selector, strict=True, **params)
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_frame.py", line 494, in click
+    await self._channel.send("click", locals_to_params(locals()))
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 63, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 495, in wrap_api_call
+    return await cb()
+  File "C:\Users\razum\AppData\Local\Programs\Python\Python39\lib\site-packages\playwright\_impl\_connection.py", line 101, in inner_send
+    result = next(iter(done)).result()
+playwright._impl._errors.Error: Error: strict mode violation: get_by_role("link", name="������� ����") resolved to 2 elements:
+    1) <a href="/rs/butyrskij/cases/docs/content/5ff217f1-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="������� ������� ����").get_by_role("link")
+    2) <a href="/rs/butyrskij/cases/docs/content/a65835a1-�>\u21b5            ������� ����\u21b5        </a> aka get_by_role("row", name="24.11.2016").get_by_role("link")
+
