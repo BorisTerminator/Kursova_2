@@ -133,7 +133,7 @@ async def run(playwright: Playwright, url_list):
 
 # Получаем список ссылок из датафрейма
 links = data['links'].tolist()
-links = links[100:]
+# links = links[100:]
 # links = ['https://mos-gorsud.ru/rs/gagarinskij/services/cases/civil/details/50750462-6d18-49a6-8cca-c2f3bb7ff0d2']
 
 
